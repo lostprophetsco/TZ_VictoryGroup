@@ -1,0 +1,17 @@
+@use '../../theme/theme' as theme;
+
+.header-additional {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 8px;
+	align-items: center;
+	justify-content: space-between;
+
+	&__search {
+		display: none;
+
+		@include theme.md {
+			display: flex;
+		}
+	}
+}

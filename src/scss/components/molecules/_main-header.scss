@@ -1,0 +1,32 @@
+@use '../../theme/theme' as theme;
+
+.main-header {
+	padding: 12px 0;
+
+	// .main-header .container
+	.container {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	// .main-header__hamburger
+	&__hamburger {
+		display: inline-flex;
+
+		@include theme.xl {
+			display: none;
+		}
+	}
+
+	// .main-header__nav
+	&__nav {
+		display: none;
+		flex-grow: 1;
+
+		@include theme.xl {
+			display: flex;
+		}
+	}
+}

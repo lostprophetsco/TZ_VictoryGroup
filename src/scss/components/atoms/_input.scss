@@ -1,0 +1,21 @@
+@use '../../theme/theme' as theme;
+@use '../../mixins' as mixins;
+
+.input {
+	font-family: var(--fonts-family-default), system-ui, sans-serif;
+	color: var(--font-color-gray);
+	border: none;
+
+	@include theme.text-style-helper(t3);
+
+	@include mixins.placeholder {
+		color: var(--font-color-light-gray);
+
+		@include theme.text-style-helper(t3);
+	}
+
+	// .input:hover, .input:focus-within, .input:active
+	&:hover, &:focus-within, &:active {
+		outline: none;
+	}
+}

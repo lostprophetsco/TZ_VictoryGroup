@@ -1,0 +1,33 @@
+@use '../../theme/theme' as mixins;
+
+.nav {
+	// .nav__list
+	&__list {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: 4px;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	// .nav__link
+	&__link {
+		display: flex;
+		flex-flow: row nowrap;
+		padding: 10px 20px;
+		color: var(--font-color-dark);
+		text-decoration: none;
+		border: 1px transparent solid;
+		border-bottom: 1px solid #DCE1E9;
+		border-radius: var(--radius-16);
+		transition: all var(--transition-time-200) var(--transition-easing-easeinout);
+
+		@include mixins.text-style-helper(t3);
+
+		// .nav__link--active, .nav__link:hover, .nav__link:focus-within, .nav__link:active
+		&--active, &:hover, &:focus-within, &:active {
+			border: 1px var(--background-color-blue) solid;
+		}
+	}
+}

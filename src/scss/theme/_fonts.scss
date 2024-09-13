@@ -1,7 +1,15 @@
 @font-face {
+  font-family: PTRootUIVFBold;
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../fonts/pt-root-ui_bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
   font-family: PTRootUIVF;
   font-style: normal;
   font-weight: 400;
-  src: url('../../fonts/PTRootUIVF.woff2') format('woff2');
+  src: url('../../fonts/pt-root-ui_regular.woff2') format('woff2');
   font-display: swap;
 }

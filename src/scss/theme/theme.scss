@@ -257,7 +257,8 @@ $break-xxl: 1600px;
 }
 
 @mixin fonts-family() {
-  --fonts-family-default: ptrootuivf, sans-serif;
+  --fonts-family-default: ptrootuivf;
+  --fonts-family-bold: ptrootuivfbold;
 }
 
 @mixin fonts-size() {
@@ -267,6 +268,7 @@ $break-xxl: 1600px;
   --fonts-size-h4: 16px;
   --fonts-size-t2: 16px;
   --fonts-size-t3: 14px;
+  --fonts-size-button: 14px;
 
   @include lg {
     --fonts-size-h3: 20px;
@@ -280,6 +282,7 @@ $break-xxl: 1600px;
   --fonts-weight-h4: 700;
   --fonts-weight-t2: 400;
   --fonts-weight-t3: 400;
+  --fonts-weight-button: 700;
 }
 
 @mixin fonts-height() {
@@ -289,6 +292,7 @@ $break-xxl: 1600px;
   --fonts-height-h4: 150%;
   --fonts-height-t2: 150%;
   --fonts-height-t3: 143%;
+  --fonts-height-button: 20px;
 }
 
 @mixin indents() {

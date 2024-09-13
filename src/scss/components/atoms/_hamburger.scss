@@ -1,0 +1,20 @@
+.hamburger {
+	display: inline-flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	min-width: 24px;
+	height: 24px;
+	min-height: 24px;
+	padding: 0;
+	color: var(--background-color-blue);
+	cursor: pointer;
+	background: none;
+	border: none;
+
+	// .hamburger:focus, .hamburger:focus-within, .hamburger:active
+	&:hover, &:focus-within, &:active {
+		outline: none;
+	}
+}

@@ -1,0 +1,9 @@
+.header-logo {
+	display: inline-flex;
+	text-decoration: none;
+
+	// .header-logo__img
+	&__img {
+		display: block;
+	}
+}

@@ -1,0 +1,20 @@
+@use '../../theme/theme' as theme;
+
+.header-phone {
+	// .header-phone__icon-link
+	&__icon-link {
+		@include theme.md {
+			display: none;
+		}
+	}
+
+	// .header-phone__button
+	&__button {
+		display: none;
+
+		@include theme.md {
+			display: block;
+		}
+	}
+}
+

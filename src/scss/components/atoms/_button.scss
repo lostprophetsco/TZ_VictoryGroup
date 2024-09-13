@@ -1,0 +1,15 @@
+@use '../../theme/theme' as theme;
+
+.button {
+	display: flex;
+	padding: 10px 20px;
+	font-family: var(--fonts-family-bold), system-ui, sans-serif;
+	color: var(--utility-color-white);
+	text-decoration: none;
+	cursor: pointer;
+	background-color: var(--background-color-blue);
+	border: none;
+	border-radius: var(--radius-16);
+
+	@include theme.text-style-helper(button);
+}

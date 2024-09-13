@@ -121,6 +121,7 @@ CSS переменные миксина `fonts-family`:
 
 ```
 --fonts-family-default: PTRootUIVF, sans-serif;
+--fonts-family-bold: PTRootUIVFBold, sans-serif;
 
 ```
 #### Fonts Size
@@ -138,6 +139,7 @@ CSS переменные миксина `fonts-size`:
 --fonts-size-h4: 16px;
 --fonts-size-t2: 16px;
 --fonts-size-t3: 14px;
+--fonts-size-button: 14px;
 
 ```
 #### Fonts Weight
@@ -154,6 +156,7 @@ CSS переменные миксина `fonts-weight`:
 --fonts-weight-h4: 700;
 --fonts-weight-t2: 400;
 --fonts-weight-t3: 400;
+--fonts-weight-button: 700;
 
 ```
 #### Fonts Height
@@ -170,6 +173,7 @@ CSS переменные миксина `fonts-height`:
 --fonts-height-h4: 150%;
 --fonts-height-t2: 150%;
 --fonts-height-t3: 143%;
+--fonts-height-button: 20px;
 
 ```
 ### Indents
