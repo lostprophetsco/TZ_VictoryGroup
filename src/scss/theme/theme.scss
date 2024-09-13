@@ -290,11 +290,33 @@ $break-xxl: 1600px;
   --fonts-height-t3: 143%;
 }
 
+@mixin indents() {
+  --indents-200: 5px;
+}
+
+@mixin transition-time() {
+  --transition-time-200: 200ms;
+}
+
+@mixin transition-easing() {
+  --transition-easing-linear: linear;
+  --transition-easing-ease: ease;
+  --transition-easing-easeinout: ease-in-out;
+}
+
 @mixin radius() {
   --radius-12: 12px;
   --radius-16: 16px;
   --radius-50percent: 50%;
   --radius-rounded: 99em;
+}
+
+@mixin shadow() {
+  --shadow-0: 0 0 0 0 transparent;
+}
+
+@mixin blur() {
+  --blur-0: 0 0 0 0 transparent;
 }
 
 @mixin text-style-helper($name) {

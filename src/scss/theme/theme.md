@@ -171,6 +171,47 @@ CSS переменные миксина `fonts-height`:
 --fonts-height-t3: 143%;
 
 ```
+### Indents
+Объект `indents` содержит следующие миксины:
+
+#### Indents
+```
+@include indents;
+```
+
+CSS переменные миксина `indents`:
+
+```
+--indents-200: 5px;
+
+```
+### Transition
+Объект `transition` содержит следующие миксины:
+
+#### Transition Time
+```
+@include transition-time;
+```
+
+CSS переменные миксина `transition-time`:
+
+```
+--transition-time-200: 200ms;
+
+```
+#### Transition Easing
+```
+@include transition-easing;
+```
+
+CSS переменные миксина `transition-easing`:
+
+```
+--transition-easing-linear: linear;
+--transition-easing-ease: ease;
+--transition-easing-easeinout: ease-in-out;
+
+```
 ### Radius
 Объект `radius` содержит следующие миксины:
 
@@ -186,5 +227,33 @@ CSS переменные миксина `radius`:
 --radius-16: 16px;
 --radius-50percent: 50%;
 --radius-rounded: 99em;
+
+```
+### Shadow
+Объект `shadow` содержит следующие миксины:
+
+#### Shadow
+```
+@include shadow;
+```
+
+CSS переменные миксина `shadow`:
+
+```
+--shadow-0: 0 0 0 0 transparent;
+
+```
+### Blur
+Объект `blur` содержит следующие миксины:
+
+#### Blur
+```
+@include blur;
+```
+
+CSS переменные миксина `blur`:
+
+```
+--blur-0: 0 0 0 0 transparent;
 
 ```
