@@ -1,0 +1,506 @@
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+$break-xl: 1200px;
+$break-xxl: 1600px;
+
+@mixin sm() {
+  @media screen and (min-width: $break-sm) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media screen and (min-width: $break-md) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media screen and (min-width: $break-lg) {
+    @content;
+  }
+}
+
+@mixin xl() {
+  @media screen and (min-width: $break-xl) {
+    @content;
+  }
+}
+
+@mixin xxl() {
+  @media screen and (min-width: $break-xxl) {
+    @content;
+  }
+}
+
+@mixin grid-settings() {
+  --container: 100%;
+  --debug-container: '100%';
+  --fields: 16px;
+  --debug-fields: '16px';
+  --gap: 14px;
+  --debug-gap: '14px';
+  --debug-breakpoint: 'null';
+
+  @include sm {
+    --container: 100%;
+    --debug-container: '100%';
+    --debug-breakpoint: 'sm';
+    --fields: 30px;
+    --debug-fields: '30px';
+    --gap: 20px;
+    --debug-gap: '20px';
+  }
+
+  @include md {
+    --container: 100%;
+    --debug-container: '100%';
+    --debug-breakpoint: 'md';
+  }
+
+  @include lg {
+    --container: 100%;
+    --debug-container: '100%';
+    --debug-breakpoint: 'lg';
+  }
+
+  @include xl {
+    --container: 100%;
+    --debug-container: '100%';
+    --debug-breakpoint: 'xl';
+    --fields: 40px;
+    --debug-fields: '40px';
+    --gap: 30px;
+    --debug-gap: '30px';
+  }
+
+  @include xxl {
+    --container: 1600px;
+    --debug-container: '1600px';
+    --debug-breakpoint: 'xxl';
+  }
+}
+
+@mixin grid-container() {
+  @include grid-container-fluid;
+
+  max-width: var(--container);
+  margin: 0 auto;
+
+  @extend %grid-debug !optional;
+}
+
+@mixin grid-container-fluid() {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding-right: var(--fields);
+  padding-left: var(--fields);
+
+  @extend %grid-debug !optional;
+}
+
+@mixin debug(
+  $columns,
+  $columns-sm: null,
+  $columns-md: null,
+  $columns-lg: null,
+  $columns-xl: null,
+  $columns-xxl: null
+) {
+  %grid-debug {
+    --columns: #{$columns};
+    --grid-column-width: calc((100% - var(--gap) * var(--columns)) / var(--columns));
+    --grid-column-width-gap: calc(var(--grid-column-width) + var(--gap));
+    --grid-column-half-width-gap: calc(var(--grid-column-width) + var(--gap) / 2);
+    --half-gap: calc(var(--gap) / 2);
+    --grid-color: rgb(255 0 0 / 20%);
+    --padding-color: #6ccc7e73;
+    --heading-hint: 'BreakPoint: ' var(--debug-breakpoint) '; Container: ' var(--debug-container)
+      '; Fields: ' var(--debug-fields) '; ' 'Gap: ' var(--debug-gap);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 9999;
+      height: calc(100% - 30px);
+      padding: 5px var(--fields) 25px;
+      font-family: system-ui;
+      font-size: 20px;
+      font-weight: 500;
+      color: #00000080;
+      text-align: center;
+      pointer-events: none;
+      content: var(--heading-hint);
+      counter-reset: variable var(--columns);
+      background-image: repeating-linear-gradient(
+        to left,
+        transparent 0,
+        transparent var(--half-gap),
+        var(--grid-color) var(--half-gap),
+        var(--grid-color) var(--grid-column-half-width-gap),
+        transparent var(--grid-column-half-width-gap),
+        transparent var(--grid-column-width-gap)
+      );
+      background-repeat: space;
+      border: solid transparent;
+      border-width: 0 calc(var(--fields) - var(--gap) / 2);
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100%;
+      height: calc(100% - 20px);
+      padding-top: 20px;
+      font-family: system-ui;
+      font-size: 13px;
+      font-weight: 500;
+      color: #00000080;
+      text-align: center;
+      pointer-events: none;
+      content: counter(variable) ' columns grid';
+      background-image: linear-gradient(
+          to left,
+          var(--padding-color) 0,
+          var(--padding-color) var(--fields)
+        ),
+        linear-gradient(to left, var(--padding-color) 0, var(--padding-color) var(--fields));
+      background-repeat: no-repeat;
+      background-position: 0 0, 100% 0;
+      background-size: var(--fields) 100%, var(--fields) 100%;
+    }
+
+    @include sm {
+      --columns: #{$columns-sm};
+    }
+
+    @include md {
+      --columns: #{$columns-md};
+    }
+
+    @include lg {
+      --columns: #{$columns-lg};
+    }
+
+    @include xl {
+      --columns: #{$columns-xl};
+    }
+
+    @include xxl {
+      --columns: #{$columns-xxl};
+    }
+  }
+}
+
+@mixin grid(
+  $columns,
+  $columns-sm: null,
+  $columns-md: null,
+  $columns-lg: null,
+  $columns-xl: null,
+  $columns-xxl: null
+) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: var(--gap);
+  width: 100%;
+
+  @if $columns-sm {
+    @include sm {
+      grid-template-columns: repeat($columns-sm, 1fr);
+    }
+  }
+
+  @if $columns-md {
+    @include md {
+      grid-template-columns: repeat($columns-md, 1fr);
+    }
+  }
+
+  @if $columns-lg {
+    @include lg {
+      grid-template-columns: repeat($columns-lg, 1fr);
+    }
+  }
+
+  @if $columns-xl {
+    @include xl {
+      grid-template-columns: repeat($columns-xl, 1fr);
+    }
+  }
+
+  @if $columns-xxl {
+    @include xxl {
+      grid-template-columns: repeat($columns-xxl, 1fr);
+    }
+  }
+}
+
+@mixin theme-default() {
+  --colors-brand-primary-100: #f5f6ff;
+  --colors-brand-primary-200: #e1e2ff;
+  --colors-brand-primary-300: #c9cbff;
+  --colors-brand-primary-400: #9a9cd1;
+  --colors-brand-primary-500: #6d6e9e;
+  --colors-brand-primary-600: #585984;
+  --colors-brand-primary-700: #44456b;
+  --colors-brand-primary-800: #323352;
+  --colors-brand-primary-500-50: rgb(109 110 158 / 50%);
+  --colors-brand-primary-200-15: rgb(225 226 255 / 15%);
+  --colors-brand-secondary-200: #f9faff;
+  --colors-brand-secondary-300: #e9f3ff;
+  --colors-brand-secondary-400: #aac9f0;
+  --colors-brand-secondary-500: #86a4ca;
+  --colors-accent-tertiary-400: #ff7070;
+  --colors-accent-tertiary-500: #f14343;
+  --colors-accent-tertiary-600: #dc1616;
+  --colors-accent-tertiary-700: #c10000;
+  --colors-gray-neutral-300: #f7f7f7;
+  --colors-gray-neutral-400: #a5a5a5;
+  --colors-gray-neutral-500: #545151;
+  --colors-gray-neutral-600: #373535;
+  --colors-gray-neutral-700: #211f1f;
+  --colors-utility-black: #000;
+  --colors-utility-white-30: rgb(255 255 255 / 30%);
+  --colors-utility-white-50: rgb(255 255 255 / 50%);
+  --colors-utility-white: #fff;
+  --colors-utility-success-20: rgb(77 190 123 / 20%);
+  --colors-utility-success: #4dbe7b;
+  --colors-utility-error-20: rgb(241 67 67 / 20%);
+  --colors-utility-error: #f14343;
+  --colors-utility-warning-20: rgb(255 155 99 / 20%);
+  --colors-utility-warning: #ff9b63;
+  --colors-utility-link-20: rgb(27 106 206 / 20%);
+  --colors-utility-link: #1b6ace;
+  --colors-complementary-yellow-1: #ffe6b5;
+  --colors-complementary-yellow-2: #fef6e6;
+  --colors-complementary-pink-1: #e2d5de;
+  --colors-complementary-pink-2: #efe7ec;
+  --colors-complementary-pink-3: #f8f3f6;
+  --colors-complementary-green: #4dbe7b;
+  --colors-complementary-plum: #a45c78;
+}
+
+@mixin fonts-family() {
+  --fonts-family-arial: arial, helvetica, sans-serif;
+}
+
+@mixin fonts-size() {
+  --fonts-size-d0: 50px;
+  --fonts-size-d1: 35px;
+  --fonts-size-d2: 25px;
+  --fonts-size-h1: 35px;
+  --fonts-size-h2: 30px;
+  --fonts-size-h3: 25px;
+  --fonts-size-h4: 20px;
+  --fonts-size-h5: 18px;
+  --fonts-size-t0: 20px;
+  --fonts-size-t1: 18px;
+  --fonts-size-t2: 18px;
+  --fonts-size-t3: 17px;
+  --fonts-size-t4: 16px;
+  --fonts-size-t5: 15px;
+  --fonts-size-t6: 13px;
+  --fonts-size-t7: 11px;
+
+  @include sm {
+    --fonts-size-d0: 70px;
+  }
+
+  @include md {
+    --fonts-size-d0: 90px;
+    --fonts-size-d1: 60px;
+    --fonts-size-d2: 50px;
+    --fonts-size-h1: 60px;
+    --fonts-size-h2: 50px;
+    --fonts-size-h3: 30px;
+    --fonts-size-h4: 24px;
+    --fonts-size-h5: 20px;
+    --fonts-size-t0: 24px;
+    --fonts-size-t1: 20px;
+  }
+
+  @include lg {
+    --fonts-size-d0: 100px;
+  }
+
+  @include xl {
+    --fonts-size-d0: 120px;
+    --fonts-size-d1: 80px;
+    --fonts-size-d2: 60px;
+  }
+
+  @include xxl {
+    --fonts-size-d0: 150px;
+  }
+}
+
+@mixin fonts-weight() {
+  --fonts-weight-d0: 600;
+  --fonts-weight-d1: 600;
+  --fonts-weight-d2: 600;
+  --fonts-weight-h1: 600;
+  --fonts-weight-h2: 600;
+  --fonts-weight-h3: 600;
+  --fonts-weight-h4: 600;
+  --fonts-weight-h5: 600;
+  --fonts-weight-t0: 400;
+  --fonts-weight-t1: 400;
+  --fonts-weight-t2: 400;
+  --fonts-weight-t3: 400;
+  --fonts-weight-t4: 400;
+  --fonts-weight-t5: 400;
+  --fonts-weight-t6: 400;
+  --fonts-weight-t7: 400;
+}
+
+@mixin fonts-height() {
+  --fonts-height-d0: 115%;
+  --fonts-height-d1: 115%;
+  --fonts-height-d2: 115%;
+  --fonts-height-h1: 115%;
+  --fonts-height-h2: 115%;
+  --fonts-height-h3: 115%;
+  --fonts-height-h4: 115%;
+  --fonts-height-h5: 115%;
+  --fonts-height-t0: 140%;
+  --fonts-height-t1: 140%;
+  --fonts-height-t2: 115%;
+  --fonts-height-t3: 115%;
+  --fonts-height-t4: 115%;
+  --fonts-height-t5: 115%;
+  --fonts-height-t6: 115%;
+  --fonts-height-t7: 115%;
+}
+
+@mixin indents() {
+  --indents-200: 5px;
+  --indents-300: 10px;
+  --indents-400: 10px;
+  --indents-500: 16px;
+  --indents-600: 16px;
+  --indents-650: 14px;
+  --indents-700: 16px;
+  --indents-800: 30px;
+  --indents-900: 60px;
+
+  @include sm {
+    --indents-600: 20px;
+    --indents-650: 20px;
+    --indents-700: 30px;
+    --indents-800: 40px;
+    --indents-900: 80px;
+  }
+
+  @include md {
+    --indents-400: 14px;
+    --indents-500: 20px;
+    --indents-800: 50px;
+    --indents-900: 100px;
+  }
+
+  @include xl {
+    --indents-600: 30px;
+    --indents-650: 30px;
+    --indents-700: 40px;
+    --indents-800: 60px;
+    --indents-900: 120px;
+  }
+}
+
+@mixin transition-time() {
+  --transition-time-10: 0.1s;
+  --transition-time-20: 0.2s;
+  --transition-time-30: 0.3s;
+  --transition-time-40: 0.4s;
+  --transition-time-60: 0.6s;
+  --transition-time-80: 0.8s;
+  --transition-time-100: 1s;
+}
+
+@mixin transition-easing() {
+  --transition-easing-linear: linear;
+  --transition-easing-ease: ease;
+  --transition-easing-easeinout: ease-in-out;
+  --transition-easing-cubicin: cubic-bezier(0.5, 0, 0, 1);
+  --transition-easing-cubicout: cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+@mixin radius() {
+  --radius-5: 5px;
+  --radius-10: 10px;
+  --radius-15: 15px;
+  --radius-25: 25px;
+  --radius-50: 50px;
+  --radius-50percent: 50%;
+  --radius-rounded: 99em;
+}
+
+@mixin shadow() {
+  --shadow-1: 30px 20px 30px 0px rgb(0 0 0 / 15%);
+  --shadow-2: 4px 4px 10px 0px rgb(0 0 0 / 15%);
+  --shadow-3: 0px 0px 24px 0px rgb(0 0 0 / 12%);
+  --shadow-4: 0px 10px 30px 0px rgb(0 0 0 / 15%);
+  --shadow-5: 0px 20px 30px 0px rgb(0 0 0 / 15%);
+  --shadow-6: 0px 20px 30px 0px rgb(0 0 0 / 40%);
+  --shadow-default: 30px 10px 30px 0px rgb(0 0 0 / 25%);
+}
+
+@mixin blur() {
+  --blur-0: blur(0px);
+  --blur-20: blur(20px);
+  --blur-50: blur(50px);
+}
+
+@mixin text-style-helper($name) {
+  font-size: var(--fonts-size-#{$name});
+  font-weight: var(--fonts-weight-#{$name});
+  line-height: var(--fonts-height-#{$name});
+}
+
+@mixin column-offset(
+  $offset,
+  $offset-sm: null,
+  $offset-md: null,
+  $offset-lg: null,
+  $offset-xl: null,
+  $offset-xxl: null
+) {
+  grid-column: $offset;
+
+  @if $offset-sm {
+    @include sm {
+      grid-column: $offset-sm;
+    }
+  }
+
+  @if $offset-md {
+    @include md {
+      grid-column: $offset-md;
+    }
+  }
+
+  @if $offset-lg {
+    @include lg {
+      grid-column: $offset-lg;
+    }
+  }
+
+  @if $offset-xl {
+    @include xl {
+      grid-column: $offset-xl;
+    }
+  }
+
+  @if $offset-xxl {
+    @include xxl {
+      grid-column: $offset-xxl;
+    }
+  }
+}

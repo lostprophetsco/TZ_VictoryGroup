@@ -1,0 +1,23 @@
+build
+dist
+
+# Editors
+.vscode
+.idea
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.temporary_cache
+
+package-lock.json
+gulp/version.json
+theme.config.js
+ice-theme-generator
+# gulp/config/ftp.js
