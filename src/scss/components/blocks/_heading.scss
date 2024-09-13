@@ -1,0 +1,35 @@
+@use '../../theme/theme' as mixins;
+
+.heading {
+	display: none;
+	padding: 6px 0;
+	color: var(--font-color-light);
+	background-color: var(--background-color-dark);
+
+	@include mixins.text-style-helper(t3);
+
+	@include mixins.md {
+		display: block;
+	}
+
+	.container {
+		display: flex;
+		flex-flow: row nowrap;
+		place-content: center space-between;
+	}
+
+	// .heading__address
+	&__address, &__time {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: 4px;
+		align-items: center
+	}
+
+	// .heading__icon
+	&__icon {
+		width: 16px;
+		height: 16px;
+		stroke: var(--font-color-light);
+	}
+}

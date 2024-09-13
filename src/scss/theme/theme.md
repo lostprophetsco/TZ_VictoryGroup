@@ -97,6 +97,7 @@ CSS переменные темы `theme-default`:
 --background-color-white: #FFFFFF;
 --background-color-gray: #9CA5B3;
 --background-color-light-gray: #DCE1E9;
+--background-color-dark: #151515;
 --utility-color-gray: #E0E0E0;
 --utility-color-black: #000000;
 --utility-color-white: #FFFFFF;
