@@ -1,0 +1,76 @@
+.range-default {
+	--default-range-track-width: 100%;
+	--default-range-track-height: 2px;
+	--default-range-track-color: var(--background-color-gray);
+	--default-range-track-active-color: var(--background-color-blue);
+	--default-range-thumb-color: var(--background-color-blue);
+	--default-range-thumb-widht: 20px;
+	--default-range-thumb-height: 20px;
+
+	width: var(--default-range-track-width);
+	height: var(--default-range-track-height);
+	appearance: none;
+	cursor: pointer;
+	background-color: var(--default-range-track-color);
+	outline: none;
+
+
+	/* Thumb: webkit */
+	// .range-default::-webkit-slider-thumb
+	&::-webkit-slider-thumb {
+		width: var(--default-range-thumb-widht);
+		height: var(--default-range-thumb-height);
+		appearance: none;
+		background-color: var(--default-range-thumb-color);
+		border: none;
+		border-radius: 50%;
+		transition: .2s ease-in-out;
+	}
+
+	/* Thumb: Firefox */
+	// .range-default::-moz-range-thumb
+	&::-moz-range-thumb {
+		width: var(--default-range-thumb-widht);
+		height: var(--default-range-thumb-height);
+		background-color: var(--default-range-thumb-color);
+		border: none;
+		border-radius: 50%;
+		transition: .2s ease-in-out;
+	}
+
+	/* Hover, active & focus Thumb: Webkit */
+	// .range-default::-webkit-slider-thumb:hover
+	&::-webkit-slider-thumb:hover {
+		box-shadow: 0 0 0 10px rgb(46 88 219 / 10%);
+	}
+
+	// .range-default::-webkit-slider-thumb:active
+	&:active::-webkit-slider-thumb {
+		box-shadow: 0 0 0 10px rgb(46 88 219 / 10%);
+	}
+
+	// .range-default::-webkit-slider-thumb:focus,
+	// .range-default::-webkit-slider-thumb:focus-within
+	&:focus-within::-webkit-slider-thumb,
+	&:focus::-webkit-slider-thumb {
+		box-shadow: 0 0 0 10px rgb(46 88 219 / 10%);
+	}
+
+	/* Hover, active & focus Thumb: Firefox */
+	// .range-default::-moz-range-thumb:hover
+	&::-moz-range-thumb:hover {
+		box-shadow: 0 0 0 10px rgb(46 88 219 / 10%);
+	}
+
+	// .range-default::-moz-range-thumb:active
+	&:active::-moz-range-thumb {
+		box-shadow: 0 0 0 10px rgb(46 88 219 / 10%);
+	}
+
+	// .range-default::-moz-range-thumb:focus,
+	// .range-default::-moz-range-thumb:focus-within
+	&:focus::-moz-range-thumb,
+	&:focus-within::-moz-range-thumb {
+		box-shadow: 0 0 0 10px rgb(46 88 219 / 10%);
+	}
+}
