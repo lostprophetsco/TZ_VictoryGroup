@@ -1,0 +1,133 @@
+<section class="calculator">
+  <div class="container">
+    <h2 class="calculator__title">Рассчитайте условия по кредиту на Haval Jolion</h2>
+
+    <div class="calculator__body">
+      <div class="calculator__ranges">
+        <div class="calculator__heading">
+          <div class="calculator__heading-title">Сумма кредита</div>
+
+          <div class="calculator__heading-value">7 070 000 ₽</div>
+        </div>
+
+        <div class="calculator__range">
+          <div class="calculator__range-group">
+            <div class="calculator__range-label">Первоначальный взнос</div>
+
+            <label class="calculator__range-input-wrapper">
+              <input
+                type="text"
+                class="calculator__range-input need-js-to-digits-separate"
+                name="first-payment"
+                placeholder="Введите число"
+              />
+
+              <span class="calculator__range-input-suffix">₽</span>
+            </label>
+
+            <input
+              type="range"
+              min="0"
+              max="90"
+              step="1"
+              value="0"
+              class="range-default calculator__range-range"
+            />
+          </div>
+
+          <div class="calculator__range-legend">
+            <span>0%</span>
+
+            <span>90%</span>
+          </div>
+        </div>
+
+        <div class="calculator__range">
+          <div class="calculator__range-group">
+            <div class="calculator__range-label">Срок кредита</div>
+
+            <div class="calculator__range-input-wrapper">
+              <input
+                type="text"
+                class="calculator__range-input"
+                name="credit-term"
+                placeholder="Введите срок"
+              />
+
+              <span class="calculator__range-input-suffix">мес.</span>
+            </div>
+
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="0"
+              class="range-default calculator__range-range"
+            />
+          </div>
+
+          <div class="calculator__range-legend">
+            <span>6 мес.</span>
+
+            <span>8 лет</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator__offer">
+        <div class="calculator__offer-title">Наше предложение</div>
+
+        <div class="calculator__monthly">
+          <div class="calculator__monthly-title">Ежемесячный платеж</div>
+
+          <div class="calculator__monthly-controls">
+            <button type="button" class="calculator__monthly-button">
+              <svg
+                class="calculator__monthly-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <use xlink:href="@img/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+
+            <div class="calculator__monthly-value">30 000 ₽</div>
+
+            <button type="button" class="calculator__monthly-button">
+              <svg
+                class="calculator__monthly-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <use xlink:href="@img/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="calculator__info">
+          <svg class="calculator__info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <use xlink:href="@img/sprite.svg#icon-info"></use>
+          </svg>
+          Расчет носит информационный характер, не является публичной офертой
+        </div>
+
+        <div class="calculator__order">
+          <button type="button" class="calculator__order-button button">Купить в кредит</button>
+        </div>
+      </div>
+
+      <div class="calculator__info calculator__info--mobile">
+        <svg class="calculator__info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <use xlink:href="@img/sprite.svg#icon-info"></use>
+        </svg>
+        Расчет носит информационный характер, не является публичной офертой
+      </div>
+    </div>
+  </div>
+</section>

@@ -54,7 +54,7 @@ const images = (isBuild, serverInstance) => {
     .src(filePaths.src.images)
     .pipe(logger.handleError('IMAGES-WEBP'))
     .pipe(plugins.newer(filePaths.build.images))
-    .pipe(plugins.if(isBuild, webp({ quality: 80 })))
+    .pipe(webp({ quality: 80 }))
     .pipe(gulp.dest(filePaths.build.images))
     .pipe(serverInstance.stream());
 
@@ -62,7 +62,7 @@ const images = (isBuild, serverInstance) => {
     .src(filePaths.src.images)
     .pipe(logger.handleError('IMAGES-AVIF'))
     .pipe(plugins.newer(filePaths.build.images))
-    .pipe(plugins.if(isBuild, avif({ quality: 80 })))
+    .pipe(avif({ quality: 80 }))
     .pipe(gulp.dest(filePaths.build.images))
     .pipe(serverInstance.stream());
 
