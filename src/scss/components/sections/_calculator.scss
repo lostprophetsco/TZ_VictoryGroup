@@ -79,7 +79,6 @@
 		padding: 10px 16px 16px;
 		background-color: var(--background-color-white);
 		border-radius: var(--radius-12) var(--radius-12) 0 0;
-
 	}
 
 	// .calculator__range-label
@@ -114,6 +113,8 @@
 		background-color: transparent;
 		border: 0;
 
+		@include theme.text-style-helper(h4);
+
 		// .calculator__range-input::placeholder
 		&::placeholder {
 			font-family: var(--fonts-family-bold), system-ui, sans-serif;
@@ -124,8 +125,6 @@
 			color: currentcolor;
 			background-color: var(--background-color-light-blue);
 		}
-
-		@include theme.text-style-helper(h4);
 
 		// .calculator__range-input:focus
 		&:focus {
@@ -180,11 +179,10 @@
 	// .calculator__offer-title
 	&__offer-title {
 		display: none;
-
-		@include theme.text-style-helper(h3);
-
 		font-family: var(--fonts-family-bold), system-ui, sans-serif;
 		text-align: center;
+
+		@include theme.text-style-helper(h3);
 
 		@include theme.md {
 			display: block;
@@ -233,7 +231,7 @@
 
 	// .calculator__monthly-value
 	&__monthly-value {
-	@include theme.text-style-helper(h2);
+		@include theme.text-style-helper(h2);
 
 		font-family: var(--fonts-family-bold), system-ui, sans-serif;
 		color: var(--font-color-blue);
