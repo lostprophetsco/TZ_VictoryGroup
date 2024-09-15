@@ -3,9 +3,11 @@
   @@include('html/page-blocks/_head.html',{ "lang":"ru", "title":"Tz_VictoryGroup",
   "description":"", "keywords":"", "favicon":"favicon", })
   <body>
-    @@include('html/page-blocks/_header.html')
+    @@include('html/page-blocks/_header.html') @@include('html/bem-blocks/_breadcrumbs.html')
 
-    <main class="main">@@include('html/bem-blocks/_breadcrumbs.html')</main>
+    <main class="main">
+      @@include('html/bem-blocks/_car.html') @@include('html/bem-blocks/_calculator.html')
+    </main>
 
     @@include('html/page-blocks/_footer.html') @@include('html/page-blocks/_scripts.html')
   </body>
