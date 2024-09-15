@@ -1,0 +1,169 @@
+<section class="car">
+  <div class="container">
+    <div class="car__heading">
+      <div class="car__title">
+        <h1 class="car__caption">Haval Jolion</h1>
+        <span class="car__city">в Новосибирске</span>
+      </div>
+
+      <div class="car__availability">4 автомобиля в наличии</div>
+    </div>
+
+    <div class="car__body">
+      <div class="car__body-left">
+        <div class="car__image-wrapper">
+          <div class="car__discount">-30%</div>
+
+          <div class="car__color-description">
+            Цвет
+            <span>Благородный агат</span>
+          </div>
+
+          <picture>
+            <source srcset="@img/car.webp" type="image/webp" />
+            <source srcset="@img/car.avif" type="image/avif" />
+            <img
+              src="@img/car.jpg"
+              alt="Haval Jolion"
+              width="600"
+              height="450"
+              class="car__image"
+            />
+          </picture>
+        </div>
+
+        <div class="car__colors">
+          <span class="car__color car__color--gray car__color--current"></span>
+          <span class="car__color car__color--black"></span>
+          <span class="car__color car__color--white"></span>
+          <span class="car__color car__color--blue"></span>
+          <span class="car__color car__color--red"></span>
+        </div>
+      </div>
+
+      <div class="car__body-right">
+        <div class="car__characteristics">
+          <div class="car__characteristic">
+            <svg
+              class="car__characteristic-icon"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <use xlink:href="@img/sprite.svg#icon-power"></use>
+            </svg>
+            <div class="car__characteristic-title">Мощность</div>
+            <div class="car__characteristic-value">249 л.с.</div>
+          </div>
+
+          <div class="car__characteristic">
+            <svg
+              class="car__characteristic-icon"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <use xlink:href="@img/sprite.svg#icon-volume"></use>
+            </svg>
+            <div class="car__characteristic-title">Объем двигателя</div>
+            <div class="car__characteristic-value">2,0 л</div>
+          </div>
+
+          <div class="car__characteristic">
+            <svg
+              class="car__characteristic-icon"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <use xlink:href="@img/sprite.svg#icon-fuel"></use>
+            </svg>
+            <div class="car__characteristic-title">Расход</div>
+            <div class="car__characteristic-value">8,2 л</div>
+          </div>
+
+          <div class="car__characteristic">
+            <svg
+              class="car__characteristic-icon"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <use xlink:href="@img/sprite.svg#icon-gear"></use>
+            </svg>
+            <div class="car__characteristic-title">Привод</div>
+            <div class="car__characteristic-value">полный</div>
+          </div>
+        </div>
+
+        <div class="car__options">
+          <div class="car__option">
+            <div class="checkbox car__option-checkbox">
+              <label class="checkbox__label">
+                <input type="checkbox" name="option" id="option1" class="checkbox__input" />
+                <span class="checkbox__checkmark"></span>
+                <span class="checkbox__text">Скидка по Trade-in</span>
+              </label>
+            </div>
+
+            <div class="car__option-text">-170 000 ₽</div>
+          </div>
+
+          <div class="car__option">
+            <div class="checkbox car__option-checkbox">
+              <label class="checkbox__label">
+                <input type="checkbox" name="option" id="option2" class="checkbox__input" />
+                <span class="checkbox__checkmark"></span>
+                <span class="checkbox__text">Покупка в кредит</span>
+              </label>
+            </div>
+
+            <div class="car__option-text">-250 000 ₽</div>
+          </div>
+
+          <div class="car__option">
+            <div class="checkbox car__option-checkbox">
+              <label class="checkbox__label">
+                <input type="checkbox" name="option" id="option3" class="checkbox__input" />
+                <span class="checkbox__checkmark"></span>
+                <span class="checkbox__text">Скидка по программе утилизации</span>
+              </label>
+            </div>
+
+            <div class="car__option-text">-80 000 ₽</div>
+          </div>
+        </div>
+
+        <div class="car__price">
+          <div class="car__price-heading">
+            <div class="car__price-title">Ваша выгода</div>
+            <div class="car__price-benefit">330 000 ₽</div>
+          </div>
+
+          <div class="car__price-vol">
+            <div class="car__price-sum">
+              <span class="car__price-value">
+                от 7 070 000 ₽
+                <span class="car__price-credit">В кредит от 89 000 ₽/мес</span>
+              </span>
+              <span class="car__price-start"
+                >Цена без учета скидки: от&nbsp;7&nbsp;400&nbsp;000&nbsp;₽</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="car__order">
+          <button type="button" class="car__order-reserve button button--white">
+            Забронировать
+          </button>
+          <button type="button" class="car__order-buy button">Купить в кредит</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
