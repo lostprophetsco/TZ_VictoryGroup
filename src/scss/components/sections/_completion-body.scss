@@ -34,7 +34,30 @@
     cursor: pointer;
     background-color: transparent;
     border: none;
+		transition: all var(--transition-time-200) var(--transition-easing-easeinout);
+
+		// .completion-body__toggle--closed
+		&--closed {
+			transform: rotateZ(180deg);
+		}
   }
+
+	// .completion-body__glide
+	&__glide {
+		transition: all var(--transition-time-200) var(--transition-easing-easeinout);
+		transform: translateY(0%);
+
+		// .completion-body__glide--hidden
+		&--hidden {
+			overflow: hidden;
+			transform: translateY(100%);
+
+			// .completion-body__glide--hidden > *
+			& > * {
+				max-height: 0;
+			}
+		}
+	}
 
   // .completion-body__body
   &__body {

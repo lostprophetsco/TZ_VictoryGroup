@@ -1,6 +1,7 @@
 import customBackgroundInputRange from './helpers/customBackgroundInputRange.js';
 import numberWithSpaces from './helpers/numberWithSpaces.js';
 import inputTextAutoWidth from './helpers/inputTextAutoWidth.js';
+import toggleClasses from './helpers/toggleClasses.js';
 
 import Glide, {
   Controls,
@@ -12,6 +13,12 @@ import Glide, {
 customBackgroundInputRange('.range-default');
 numberWithSpaces('.need-js-to-digits-separate');
 inputTextAutoWidth('.calculator__range-input');
+toggleClasses(
+  '.completion-body__toggle',
+  'completion-body__toggle--closed',
+  '.completion-body__glide',
+  'completion-body__glide--hidden',
+);
 
 const glideOptions = {
   type: 'carousel',
