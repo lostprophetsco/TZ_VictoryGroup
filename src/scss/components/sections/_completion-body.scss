@@ -1,0 +1,104 @@
+@use '../../theme/theme' as theme;
+
+.completion-body {
+	$this: &;
+	$glide: '.glide';
+
+  padding: 20px 0 40px;
+  background-color: var(--background-color-white);
+
+  @include theme.md {
+    padding: 40px 0 80px;
+  }
+
+  // .completion-body__header
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px var(--background-color-gray) solid;
+  }
+
+  // .completion-body__title
+  &__title {
+    @include theme.text-style-helper(h3);
+
+    font-family: var(--fonts-family-bold), system-ui, sans-serif;
+  }
+
+  // .completion-body__toggle
+  &__toggle {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+
+  // .completion-body__body
+  &__body {
+    margin-top: 20px;
+  }
+
+  // .completion-body__column
+  &__column {
+		display: flex;
+		flex-flow: column nowrap;
+
+		// .completion-body__column.glide__slide--active
+		&#{$glide}__slide--active {
+			// .completion-body__column.glide__slide--active .completion-body__column-title
+			#{$this}__column-title {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+  }
+
+  // .completion-body__column-title
+  &__column-title {
+		@include theme.text-style-helper(t2);
+
+		color: var(--font-color-gray);
+		visibility: hidden;
+		opacity: 0;
+		transition: all var(--transition-time-200) var(--transition-easing-easeinout);
+  }
+
+  // .completion-body__column-body
+  &__column-body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px;
+		margin-top: 8px;
+		margin-bottom: 20px;
+		background-color: var(--background-color-light-gray);
+		border-radius: var(--radius-16);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+  }
+
+  // .completion-body__column-icon
+  &__column-icon {
+		width: 24px;
+		height: 24px;
+
+    // .completion-body__column-icon--minus
+    &--minus {
+			background-color: var(--background-color-gray);
+			border-radius: var(--radius-50percent);
+			stroke: var(--font-color-white);
+    }
+
+    // .completion-body__column-icon--plus
+    &--plus {
+			background-color: var(--background-color-dark);
+			border-radius: var(--radius-50percent);
+			stroke: var(--font-color-white);
+    }
+  }
+}

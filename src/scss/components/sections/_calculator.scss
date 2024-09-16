@@ -5,6 +5,11 @@
 
 	padding: clamp(40px, 7vw, 80px) 0;
 	background-color: var(--background-color-light-blue);
+	border-radius: 20px;
+
+	@include theme.md {
+		border-radius: 40px;
+	}
 
 	// .calculator__title
 	&__title {

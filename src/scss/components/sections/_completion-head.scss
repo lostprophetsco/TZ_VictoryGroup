@@ -1,0 +1,140 @@
+@use '../../theme/theme' as theme;
+
+.completion-head {
+  padding: 40px 0 20px;
+  background-color: transparent;
+
+  @include theme.md {
+    padding: 80px 0 40px;
+  }
+
+  // .completion-head__title
+  &__title {
+    font-family: var(--fonts-family-bold), system-ui, sans-serif;
+    text-align: left;
+
+    @include theme.text-style-helper(h1);
+
+    @include theme.md {
+      text-align: center;
+    }
+
+    span {
+      display: inline-block;
+      color: var(--font-color-light-gray);
+    }
+  }
+
+  // .completion-head__body
+  &__body {
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+
+    @include theme.md {
+      margin-top: 60px;
+    }
+  }
+
+  // .completion-head__card
+  &__card {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4px;
+    padding: 10px;
+    background-color: var(--background-color-white);
+    border-radius: var(--radius-16);
+  }
+
+  // .completion-head__card-header
+  &__card-header {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  // .completion-head__card-title
+  &__card-title {
+    @include theme.text-style-helper(h4);
+
+    font-family: var(--fonts-family-bold), system-ui, sans-serif;
+  }
+
+  // .completion-head__card-button
+  &__card-button {
+    flex-shrink: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+
+  // .completion-head__card-body
+  &__card-body {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .completion-head__card-price
+  &__card-price {
+    @include theme.text-style-helper(h4);
+
+    font-family: var(--fonts-family-bold), system-ui, sans-serif;
+    color: var(--font-color-blue);
+  }
+
+  // .completion-head__card-order
+  &__card-order {
+    flex-shrink: 0;
+  }
+
+  // .completion-head__glide
+  &__glide {
+    position: relative;
+  }
+
+  // .completion-head__glide-arrows
+  &__glide-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    display: none;
+    width: 100%;
+    height: 32px;
+    transform: translateY(-50%);
+
+    @include theme.xxl {
+      display: block;
+    }
+  }
+
+  // .completion-head__glide-arrow
+  &__glide-arrow {
+    position: absolute;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    // .completion-head__glide-arrow--left
+    &--left {
+      left: -48px;
+    }
+
+    // .completion-head__glide-arrow--right
+    &--right {
+      right: -48px;
+    }
+  }
+
+  // .completion-head__glide-arrow-icon
+  &__glide-arrow-icon {
+  }
+}

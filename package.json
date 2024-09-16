@@ -19,6 +19,7 @@
     "theme": "node theme.config.js && stylelint \"./src/scss/theme/**/*.scss\" --fix && prettier --write \"./src/scss/theme/**/*.scss\""
   },
   "dependencies": {
+    "@glidejs/glide": "^3.6.2",
     "reset-css": "^5.0.2"
   },
   "devDependencies": {
