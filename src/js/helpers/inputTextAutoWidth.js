@@ -5,16 +5,16 @@
  */
 const inputTextAutoWidth = (element) => {
   const inputs = document.querySelectorAll(element);
+
+  if (!inputs.length) return;
   const eventHandler = (event) => {
     event.target.size = event.target.value.replace(/\D/g, ' ').length;
     //event.target.style.width = event.target.value.length + 'ch';
   };
 
-  if (inputs.length) {
-    inputs.forEach((input) => {
-      input.addEventListener('input', eventHandler);
-    });
-  }
+  inputs.forEach((input) => {
+    input.addEventListener('input', eventHandler);
+  });
 };
 
 export default inputTextAutoWidth;

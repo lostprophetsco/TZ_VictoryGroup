@@ -104,7 +104,13 @@
           <div class="car__option">
             <div class="checkbox car__option-checkbox">
               <label class="checkbox__label">
-                <input type="checkbox" name="option" id="option1" class="checkbox__input" />
+                <input
+                  type="checkbox"
+                  name="option"
+                  id="option1"
+                  class="checkbox__input calculator-discount"
+                  data-discount="170000"
+                />
                 <span class="checkbox__checkmark"></span>
                 <span class="checkbox__text">Скидка по Trade-in</span>
               </label>
@@ -116,7 +122,13 @@
           <div class="car__option">
             <div class="checkbox car__option-checkbox">
               <label class="checkbox__label">
-                <input type="checkbox" name="option" id="option2" class="checkbox__input" />
+                <input
+                  type="checkbox"
+                  name="option"
+                  id="option2"
+                  class="checkbox__input calculator-discount"
+                  data-discount="250000"
+                />
                 <span class="checkbox__checkmark"></span>
                 <span class="checkbox__text">Покупка в кредит</span>
               </label>
@@ -128,7 +140,13 @@
           <div class="car__option">
             <div class="checkbox car__option-checkbox">
               <label class="checkbox__label">
-                <input type="checkbox" name="option" id="option3" class="checkbox__input" />
+                <input
+                  type="checkbox"
+                  name="option"
+                  id="option3"
+                  class="checkbox__input calculator-discount"
+                  data-discount="80000"
+                />
                 <span class="checkbox__checkmark"></span>
                 <span class="checkbox__text">Скидка по программе утилизации</span>
               </label>
@@ -141,18 +159,19 @@
         <div class="car__price">
           <div class="car__price-heading">
             <div class="car__price-title">Ваша выгода</div>
-            <div class="car__price-benefit">330 000 ₽</div>
+            <div class="car__price-benefit">0 ₽</div>
           </div>
 
           <div class="car__price-vol">
             <div class="car__price-sum">
               <span class="car__price-value">
-                от 7 070 000 ₽
+                от
+                <span class="car__price-total">7 070 000 ₽</span>
                 <span class="car__price-credit">В кредит от 89 000 ₽/мес</span>
               </span>
-              <span class="car__price-start"
-                >Цена без учета скидки: от&nbsp;7&nbsp;400&nbsp;000&nbsp;₽</span
-              >
+              <span class="car__price-start" data-price="7400000">
+                Цена без учета скидки: от&nbsp;7&nbsp;400&nbsp;000&nbsp;₽
+              </span>
             </div>
           </div>
         </div>
