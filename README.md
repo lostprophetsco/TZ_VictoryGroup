@@ -9,3 +9,9 @@
 
 
 Если при запуске ругается на `Error: Cannot find module 'webp-converter/cwebp'` - `npm i webp-converter@2.2.3 --save-dev`
+
+- Верстка
+- Калькулятор кредита
+- Синхронные слайдеры glideJS
+
+[Макет](./victoryGroup.fig)
